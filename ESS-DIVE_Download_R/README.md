@@ -2,7 +2,9 @@
 ## Objective
 The `download_and_read_data()` function downloads data from [ESS-DIVE](https://data.ess-dive.lbl.gov/data) to a local directory on your computer and then reads the downloaded csv files into R's global environment as a list.
 ## Directions
-1. Source in the function by pasting the following code at the top of your script.
+1. Locate the data package on [ESS-DIVE](https://data.ess-dive.lbl.gov/data).
+2. Identify the file you want to download. This could be the entire data package ("Download All"), a specific file, or a zipped folder. 
+3. Source in the [function](https://github.com/river-corridors-sfa/rcsfa-essdive-api/blob/main/ESS-DIVE_Download_R/script_ess_dive_file_download_function.R) by pasting the following code at the top of your R script.
 
 ``` R
 # Load devtools package
@@ -15,7 +17,7 @@ github_url <- "https://raw.githubusercontent.com/river-corridors-sfa/rcsfa-essdi
 source_url(github_url)
 ```
 
-2. The `download_and_read_data()` function takes five arguments (3 required, 2 optional):
+4. Use the function to download and read in the data. The `download_and_read_data()` function takes five arguments (3 required, 2 optional):
 	- `target_url` = The URL of a specific file you want to download from ESS-DIVE
  		- To get the url, you will need to go to the data package on ESS-DIVE, hover over the green download button of the file, zip, or download all button, right click, and select "copy link address". 
 	- `filename` = The filename of the file you want to download from ESS-DIVE. The filename indicates the name of the file as it  will be saved on  your computer, it does not have to match the file name on ESS-DIVE, but we recommend it does for traceability.
@@ -30,4 +32,4 @@ csv_files_from_data_package <- download_and_read_data(
 	downloads_folder = "C:/Users/jdoe123/Downloads")`
 ```
 
-3. See [script_ess_dive_file_download_example.R](https://github.com/river-corridors-sfa/rcsfa-essdive-api/blob/main/ESS-DIVE_Download_R/script_ess_dive_file_download_example.R) for more examples on how to use the function.
+5. See [script_ess_dive_file_download_example.R](https://github.com/river-corridors-sfa/rcsfa-essdive-api/blob/main/ESS-DIVE_Download_R/script_ess_dive_file_download_example.R) for more examples on how to use the function.
